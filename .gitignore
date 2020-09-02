@@ -88,6 +88,7 @@ GitHub.sublime-settings
 .mypy_cache/
 .dmypy.json
 dmypy.json
+__pycache__/
 
 # CUSTOM: zip files and batch scripts
 *.zip

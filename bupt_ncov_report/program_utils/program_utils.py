@@ -46,6 +46,28 @@ class ProgramUtils:
 
         return old_dict
 
+    def extract_post_data_dailyup(self, html: str) -> Dict[str, Any]:
+        """
+        从上报页面的 HTML 中，提取出上报 API 所需要填写的参数。
+
+        :param html: 上报页 HTML
+        :return: dict 类型，可用于最终上报时提交的参数
+        """
+        old_dict = json.loads(html)['d']['info']
+
+        # 需要从 old dict 中删除如下数据
+        PICK_PROPS = (
+            'created', 'creator', 'date', 'flag','id','uid'
+        )
+
+        for prop in PICK_PROPS:
+            val = old_dict.pop(prop, None)
+            if val is None:
+                raise RuntimeError(f'从网页上提取的 old data 中缺少属性 {prop}，可能网页已经改版。')
+
+
+        return old_dict
+
     def extract_old_new_data(self, html: str) -> Tuple[Dict[str, Any], Dict[str, Any]]:
         """
         从页面 HTML 中提取 def 变量与 oldInfo 变量的值（分别叫做 new 与 old data），并用 Python dict 的形式返回。
