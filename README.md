@@ -1,3 +1,8 @@
+## 与Master分支的区别
+
+添加了main2.py用于执行晨午晚检，使用方法不变。
+添加users.py与run.py便于执行多人打卡任务
+
 <h2 align="center">BUPT 疫情防控通 自动上报脚本</h2>
 <p align="center">
     <a href="https://github.com/ipid/bupt-ncov-report/actions">
