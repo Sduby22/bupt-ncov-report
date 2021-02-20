@@ -3,6 +3,6 @@ users=[
     {
         "username": "2019222222",
         "pass": "114514",
-        "SCKEY": "SCU148672Ta77f9ca34982ce0c60fd563e36f2a1295ffb2da2bb6ef"
+        "SCKEY": "SCU1145141919810"
     }
 ]
